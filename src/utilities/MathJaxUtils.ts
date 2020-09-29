@@ -1,14 +1,15 @@
-const getMathJax = () => (window as any).MathJax;
-
 export const typeset = (selector: () => HTMLElement) => {
-  const mathJax = getMathJax();
+  const mathJax = (window as any).MathJax;
   // If MathJax script hasn't been loaded yet, then do nothing.
+
   if (!mathJax) {
     return null;
   }
-  if (!mathJax.starup) {
+
+  if (!mathJax.startup.promise) {
     return null;
   }
+
   mathJax.startup.promise = mathJax.startup.promise
     .then(() => {
       selector();

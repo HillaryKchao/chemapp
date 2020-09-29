@@ -1,29 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
-import { cloneDeep } from "lodash";
 
-// import { typeset } from "../../utilities/MathJaxUtils";
-import Shuffle from "../../utilities/Shuffle";
+import { typeset } from "../../utilities/MathJaxUtils";
+import { ShuffleData, compoundData } from "../../utilities/Data";
 
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 
 import styles from "./NamePage.module.scss";
-
-import { INameFormula } from "../../models/NameFormula.model";
-import compoundJson from "../../data/CompounNames.json";
-const compoundData: INameFormula[] = cloneDeep(compoundJson as INameFormula[]);
-
-const ShuffleData = () => {
-  Shuffle(compoundData);
-  compoundData.forEach((value, index) => {
-    if (Math.random() < 0.5) {
-      value.nameFirst = true;
-    } else {
-      value.nameFirst = false;
-    }
-  });
-};
-
-ShuffleData();
 
 const NamePage = () => {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -32,31 +14,10 @@ const NamePage = () => {
 
   useEffect(() => {
     if (divRef.current) {
+      setReload(false);
       typeset(() => divRef.current!);
     }
   }, [showAnswer, reload]);
-
-  const typeset = (selector: () => HTMLElement) => {
-    const mathJax = (window as any).MathJax;
-    // If MathJax script hasn't been loaded yet, then do nothing.
-
-    if (!mathJax) {
-      return null;
-    }
-
-    if (!mathJax.startup.promise) {
-      return null;
-    }
-
-    mathJax.startup.promise = mathJax.startup.promise
-      .then(() => {
-        setReload(false);
-        selector();
-        return mathJax.typesetPromise();
-      })
-      .catch((err: any) => console.error(`Typeset failed: ${err.message}`));
-    return mathJax.startup.promise;
-  };
 
   const handleToggle = (val: boolean) => {
     setShowAnswer(val);
