@@ -14,15 +14,16 @@ const compoundData: INameFormula[] = cloneDeep(compoundJson as INameFormula[]);
 
 const NamePage = () => {
   const [showAnswer, setShowAnswer] = useState(false);
+  const [reload, setReload] = useState(false);
   const divRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (divRef.current) {
       typeset(() => divRef.current!);
     }
-  }, [showAnswer]);
+  }, [showAnswer, reload]);
 
-  if (!showAnswer) {
+  const ShuffleData = () => {
     Shuffle(compoundData);
     compoundData.forEach((value, index) => {
       if (Math.random() < 0.5) {
@@ -31,7 +32,7 @@ const NamePage = () => {
         value.nameFirst = false;
       }
     });
-  }
+  };
 
   const typeset = (selector: () => HTMLElement) => {
     const mathJax = (window as any).MathJax;
@@ -47,6 +48,7 @@ const NamePage = () => {
 
     mathJax.startup.promise = mathJax.startup.promise
       .then(() => {
+        setReload(false);
         selector();
         return mathJax.typesetPromise();
       })
@@ -58,52 +60,68 @@ const NamePage = () => {
     setShowAnswer(val);
   };
 
+  const handleReload = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    ShuffleData();
+    setReload(true);
+    setShowAnswer(false);
+  };
+
   return (
     <div ref={divRef}>
-      <div style={{ marginTop: "50px" }}>
-        <ToggleSwitch
-          id={`checkanswer`}
-          name={`checkanswer`}
-          onChange={handleToggle}
-          checked={showAnswer}
-        ></ToggleSwitch>
-        <label htmlFor="checkanswer">When ready, check your answer!</label>
-      </div>
-      <div>
-        <div style={{ marginTop: "50px" }}>
-          <table style={{ marginLeft: "auto", marginRight: "auto" }}>
-            <tbody>
-              {compoundData.map((compound, index) => {
-                return showAnswer ? (
-                  <tr key={index}>
-                    <td style={{ textAlign: "right" }}>
-                      {compound.nameFirst
-                        ? compound.name
-                        : `\\(\\ce{${compound.formula}}\\)`}
-                    </td>
-                    <td style={{ textAlign: "left" }}>
-                      {compound.nameFirst
-                        ? `\\(\\ce{${compound.formula}}\\)`
-                        : compound.name}
-                    </td>
-                  </tr>
-                ) : (
-                  <tr key={index}>
-                    <td style={{ textAlign: "right" }}>
-                      {compound.nameFirst
-                        ? compound.name
-                        : `\\(\\ce{${compound.formula}}\\)`}
-                    </td>
-                    <td style={{ textAlign: "left" }}>
-                      {" "}
-                      {`_____________________`}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+      <div className={styles.OptionRow} style={{ marginTop: "50px" }}>
+        <div
+          className={styles.RoundButton}
+          style={{ marginRight: "100px" }}
+          onClick={handleReload}
+        >
+          RELOAD
         </div>
+        <div className={styles.ToggleContainer}>
+          <ToggleSwitch
+            id={`checkanswer`}
+            name={`checkanswer`}
+            onChange={handleToggle}
+            checked={showAnswer}
+            optionLabels={["Show", "Hide"]}
+          ></ToggleSwitch>
+          <label htmlFor="checkanswer">When ready, check your answer!</label>
+        </div>
+      </div>
+      <div style={{ marginTop: "30px" }}>
+        <table style={{ marginLeft: "auto", marginRight: "auto" }}>
+          <tbody>
+            {compoundData.map((compound, index) => {
+              return showAnswer ? (
+                <tr key={index}>
+                  <td style={{ textAlign: "right" }}>
+                    {compound.nameFirst
+                      ? compound.name
+                      : `\\(\\ce{${compound.formula}}\\)`}
+                  </td>
+                  <td style={{ textAlign: "left" }}>
+                    {compound.nameFirst
+                      ? `\\(\\ce{${compound.formula}}\\)`
+                      : compound.name}
+                  </td>
+                </tr>
+              ) : (
+                <tr key={index}>
+                  <td style={{ textAlign: "right" }}>
+                    {compound.nameFirst
+                      ? compound.name
+                      : `\\(\\ce{${compound.formula}}\\)`}
+                  </td>
+                  <td style={{ textAlign: "left" }}>
+                    {" "}
+                    {`_____________________`}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -1,16 +1,16 @@
 @import "../../global";
 
 // Colors
-$label-colour: #bbb;
-$disabled-colour: #ddd;
-$toggle-colour: #2f855a;
-$white: #fff;
-$focus-color: #ff0;
+// $label-colour: #bbb;
+// $disabled-colour: #ddd;
+// $toggle-colour: #2f855a;
+// $white: #fff;
+// $focus-color: #ff0;
 
 .toggle-switch {
   position: relative;
   margin-right: 10px;
-  width: 75px;
+  width: 100px;
   display: inline-block;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -41,7 +41,7 @@ $focus-color: #ff0;
     display: block;
     width: 200%;
     margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
+    transition: margin 1s ease-in 0s;
     &:before,
     &:after {
       display: block;
@@ -52,7 +52,7 @@ $focus-color: #ff0;
       line-height: 34px;
       font-size: 14px;
       color: white;
-      font-weight: bold;
+      font-weight: 700;
       box-sizing: border-box;
     }
     &:before {
@@ -87,10 +87,10 @@ $focus-color: #ff0;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 40px;
+    right: 65px;
     border: 0 solid $label-colour;
     border-radius: 20px;
-    transition: all 0.3s ease-in 0s;
+    transition: all 1s ease-in 0s;
   }
   &-checkbox:checked + &-label {
     .toggle-switch-inner {

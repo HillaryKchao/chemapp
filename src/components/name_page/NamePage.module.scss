@@ -1,1 +1,39 @@
 @import "../../global";
+
+.OptionRow {
+  display: flex;
+  flex: {
+    direction: row;
+  }
+  justify-content: center;
+}
+
+.ToggleContainer {
+  display: flex;
+  margin: 10px;
+}
+
+.RoundButton {
+  display: inline-block;
+  line-height: 34px;
+  width: 120px;
+  height: 34px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: white;
+  margin: 10px;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: $toggle-colour;
+  text-align: center;
+  transition: all 0.2s;
+  &:hover {
+    background-color: $disabled-colour;
+    color: black;
+    font-weight: 700;
+  }
+}
