@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/chemapp/static/css/main.cbecd6c4.chunk.css",
-    "main.js": "/chemapp/static/js/main.031d52aa.chunk.js",
-    "main.js.map": "/chemapp/static/js/main.031d52aa.chunk.js.map",
+    "main.css": "/chemapp/static/css/main.7d3d01e2.chunk.css",
+    "main.js": "/chemapp/static/js/main.81a49c87.chunk.js",
+    "main.js.map": "/chemapp/static/js/main.81a49c87.chunk.js.map",
     "runtime-main.js": "/chemapp/static/js/runtime-main.c3628091.js",
     "runtime-main.js.map": "/chemapp/static/js/runtime-main.c3628091.js.map",
     "static/js/2.0c226a89.chunk.js": "/chemapp/static/js/2.0c226a89.chunk.js",
     "static/js/2.0c226a89.chunk.js.map": "/chemapp/static/js/2.0c226a89.chunk.js.map",
     "index.html": "/chemapp/index.html",
-    "precache-manifest.5e44112a0b5f5d1c8981594e8a4a4e16.js": "/chemapp/precache-manifest.5e44112a0b5f5d1c8981594e8a4a4e16.js",
+    "precache-manifest.aaf5a0433ba21b7eec3a45242471c52e.js": "/chemapp/precache-manifest.aaf5a0433ba21b7eec3a45242471c52e.js",
     "service-worker.js": "/chemapp/service-worker.js",
-    "static/css/main.cbecd6c4.chunk.css.map": "/chemapp/static/css/main.cbecd6c4.chunk.css.map",
+    "static/css/main.7d3d01e2.chunk.css.map": "/chemapp/static/css/main.7d3d01e2.chunk.css.map",
     "static/js/2.0c226a89.chunk.js.LICENSE.txt": "/chemapp/static/js/2.0c226a89.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c3628091.js",
     "static/js/2.0c226a89.chunk.js",
-    "static/css/main.cbecd6c4.chunk.css",
-    "static/js/main.031d52aa.chunk.js"
+    "static/css/main.7d3d01e2.chunk.css",
+    "static/js/main.81a49c87.chunk.js"
   ]
 }
