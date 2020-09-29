@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chemapp/static/css/main.642f5899.chunk.css",
+    "main.js": "/chemapp/static/js/main.59628a05.chunk.js",
+    "main.js.map": "/chemapp/static/js/main.59628a05.chunk.js.map",
+    "runtime-main.js": "/chemapp/static/js/runtime-main.c3628091.js",
+    "runtime-main.js.map": "/chemapp/static/js/runtime-main.c3628091.js.map",
+    "static/js/2.41221713.chunk.js": "/chemapp/static/js/2.41221713.chunk.js",
+    "static/js/2.41221713.chunk.js.map": "/chemapp/static/js/2.41221713.chunk.js.map",
+    "index.html": "/chemapp/index.html",
+    "precache-manifest.35f11610b0856b4b0b67f1a826a66564.js": "/chemapp/precache-manifest.35f11610b0856b4b0b67f1a826a66564.js",
+    "service-worker.js": "/chemapp/service-worker.js",
+    "static/css/main.642f5899.chunk.css.map": "/chemapp/static/css/main.642f5899.chunk.css.map",
+    "static/js/2.41221713.chunk.js.LICENSE.txt": "/chemapp/static/js/2.41221713.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3628091.js",
+    "static/js/2.41221713.chunk.js",
+    "static/css/main.642f5899.chunk.css",
+    "static/js/main.59628a05.chunk.js"
+  ]
+}
