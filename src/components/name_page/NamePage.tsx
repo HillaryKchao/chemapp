@@ -49,7 +49,14 @@ const NamePage = () => {
             checked={showAnswer}
             optionLabels={["Show", "Hide"]}
           ></ToggleSwitch>
-          <label htmlFor="checkanswer">When ready, check your answer!</label>
+          <label
+            htmlFor="checkanswer"
+            style={{ marginTop: "5px", width: "300px", textAlign: "left" }}
+          >
+            {showAnswer
+              ? `Hide the answers when ready to start!`
+              : `When ready, check your answer!`}
+          </label>
         </div>
       </div>
       <div style={{ marginTop: "30px" }}>
@@ -77,8 +84,7 @@ const NamePage = () => {
                       : `\\(\\ce{${compound.formula}}\\)`}
                   </td>
                   <td style={{ textAlign: "left" }}>
-                    {" "}
-                    {`_____________________`}
+                    <div className={styles.Cover}></div>
                   </td>
                 </tr>
               );
