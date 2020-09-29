@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1897ad7bd1acadec5f1a20c9f26e845c",
+    "revision": "52574c446f905d8e13d60b79f8695a0e",
     "url": "/chemapp/index.html"
   },
   {
-    "revision": "a0f3a1f5d91aa87c5b67",
-    "url": "/chemapp/static/css/main.7d3d01e2.chunk.css"
+    "revision": "12ed7004a6fbfd9b5151",
+    "url": "/chemapp/static/css/main.fb910f2e.chunk.css"
   },
   {
     "revision": "823acd2ba9b295c33137",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/chemapp/static/js/2.0c226a89.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a0f3a1f5d91aa87c5b67",
-    "url": "/chemapp/static/js/main.20892af2.chunk.js"
+    "revision": "12ed7004a6fbfd9b5151",
+    "url": "/chemapp/static/js/main.72e21ea6.chunk.js"
   },
   {
     "revision": "66c22a3415e87f4aa61c",
