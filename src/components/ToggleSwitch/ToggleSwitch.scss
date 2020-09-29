@@ -41,7 +41,7 @@
     display: block;
     width: 200%;
     margin-left: -100%;
-    transition: margin 1s ease-in 0s;
+    transition: margin 0.5s ease-in 0s;
     &:before,
     &:after {
       display: block;
@@ -90,7 +90,7 @@
     right: 65px;
     border: 0 solid $label-colour;
     border-radius: 20px;
-    transition: all 1s ease-in 0s;
+    transition: all 0.5s ease-in 0s;
   }
   &-checkbox:checked + &-label {
     .toggle-switch-inner {

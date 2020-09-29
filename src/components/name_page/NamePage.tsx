@@ -12,6 +12,19 @@ import { INameFormula } from "../../models/NameFormula.model";
 import compoundJson from "../../data/CompounNames.json";
 const compoundData: INameFormula[] = cloneDeep(compoundJson as INameFormula[]);
 
+const ShuffleData = () => {
+  Shuffle(compoundData);
+  compoundData.forEach((value, index) => {
+    if (Math.random() < 0.5) {
+      value.nameFirst = true;
+    } else {
+      value.nameFirst = false;
+    }
+  });
+};
+
+ShuffleData();
+
 const NamePage = () => {
   const [showAnswer, setShowAnswer] = useState(false);
   const [reload, setReload] = useState(false);
@@ -22,17 +35,6 @@ const NamePage = () => {
       typeset(() => divRef.current!);
     }
   }, [showAnswer, reload]);
-
-  const ShuffleData = () => {
-    Shuffle(compoundData);
-    compoundData.forEach((value, index) => {
-      if (Math.random() < 0.5) {
-        value.nameFirst = true;
-      } else {
-        value.nameFirst = false;
-      }
-    });
-  };
 
   const typeset = (selector: () => HTMLElement) => {
     const mathJax = (window as any).MathJax;
